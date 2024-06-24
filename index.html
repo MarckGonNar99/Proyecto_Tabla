@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Estrellas</title>
+    <script defer text="text/JavaScript" src="app.js"></script>
+    <link href="estilos.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Tabla de Estrellas</h1>
+    <div>
+        <form method="post"  action="add_star.php" enctype="multipart/form-data">
+            <label for="starName">Nombre de la estrella:</label>
+            <input type="text" id="starName" name="starName">
+            <label for="starCategory">Categoría:</label>
+            <select id="starCategory" name="starCategory">
+                <option value="Enana Roja">Enana Roja</option>
+                <option value="Enana Amarilla">Enana Amarilla</option>
+                <option value="Gigante Roja">Gigante Roja</option>
+                <option value="Gigante Amarilla">Gigante Amarilla</option>
+                <option value="Gigante Azul">Gigante Azul</option>
+                <option value="Supergigante Roja">Supergigante Roja</option>
+                <option value="Supergigante Azul">Supergigante Azul</option>
+                <option value="Hipergigante Naranja">Hipergigante Naranja</option>
+            </select>
+            <button type="submit" name="crear">Crear Estrella</button>
+        </form>
+    </div>
+
+
+
+    <h2>Tabla de Estrellas</h2>
+    <button id="btnAgregarEstrella">Agregar Estrella</button>
+
+    <table id="tablaEstrellas">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Estrella</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+
+     <!-- Ventana oculta para listar estrellas -->
+     <div id="ventanaLista" class="hidden">
+        <h3>Lista de Estrellas</h3>
+        <input type="text" id="busqueda" placeholder="Buscar por nombre o categoría">
+        <ul id="listaEstrellas">
+            <!-- Aquí se añadirán las estrellas dinámicamente -->
+        </ul>
+        <button id="btnCerrar">Cerrar</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px auto;
+}
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+.hidden {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    position: absolute;
+    background-color: #fff;
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+}
