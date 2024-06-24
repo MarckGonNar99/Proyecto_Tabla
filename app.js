@@ -10,7 +10,7 @@
  // Función para cargar las estrellas desde la base de datos
  function cargarEstrellas() {
      // Hacer una solicitud fetch a un archivo PHP que obtenga las estrellas de la base de datos
-     fetch('obtener_estrellas.php')
+     fetch('obtener_estrella.php')
      .then(response => response.json())
      .then(data => {
          estrellas = data; // Guardar todas las estrellas en el arreglo
