@@ -3,6 +3,7 @@ var estrellas = [];
 // Función para cargar las estrellas desde la base de datos al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
     cargarEstrellas();
+    delegarEventoFila();
 });
 
 // Función para cargar las estrellas desde la base de datos
@@ -94,4 +95,21 @@ function actualizarNumeracion() {
     for (var i = 0; i < tabla.rows.length; i++) {
         tabla.rows[i].cells[0].textContent = i + 1;
     }
+}
+
+// Función para elegir color
+
+
+// Función para delegar evento de fila
+function delegarEventoFila() {
+    var tabla = document.getElementById('tablaEstrellas').getElementsByTagName('tbody')[0];
+    tabla.addEventListener('click', function(event) {
+        var target = event.target;
+        while (target && target.nodeName !== 'TR') {
+            target = target.parentNode;
+        }
+        if (target) {
+            console.log('Fila clickeada');
+        }
+    });
 }
