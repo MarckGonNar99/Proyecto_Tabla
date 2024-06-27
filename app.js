@@ -4,6 +4,7 @@ var estrellas = [];
 document.addEventListener('DOMContentLoaded', function() {
     cargarEstrellas();
     delegarEventoFila();
+    configurarSelectorColor();
 });
 
 // Función para cargar las estrellas desde la base de datos
@@ -97,8 +98,26 @@ function actualizarNumeracion() {
     }
 }
 
-// Función para elegir color
+function configurarSelectorColor() {
+    var colores = document.querySelectorAll('input[type="radio"]');
+    colores.forEach((color) => {
+        color.addEventListener("click", () => {
+            colorSeleccionado = color.id;
+        });
+    });
+}
 
+// Función para elegir color
+function elegirColor(fila) {
+    if (colorSeleccionado) {
+        fila.classList.remove("azul", "rojo"); // Remover otras clases de color
+        if (fila.classList.contains(colorSeleccionado)) {
+            fila.classList.remove(colorSeleccionado); // Quitar clase si ya la tiene
+        } else {
+            fila.classList.add(colorSeleccionado); // Añadir clase si no la tiene
+        }
+    }
+}
 
 // Función para delegar evento de fila
 function delegarEventoFila() {
@@ -109,7 +128,12 @@ function delegarEventoFila() {
             target = target.parentNode;
         }
         if (target) {
-            console.log('Fila clickeada');
+            console.log('Fila clickeada', target.rowIndex);
+            elegirColor(target);
         }
     });
 }
+
+
+
+
